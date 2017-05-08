@@ -1,4 +1,8 @@
-var qAnda = [
+/*=============================================>>>>>
+= GLOBAL VARIABLES =
+===============================================>>>>>*/
+
+var qAndA = [
   {
     question: 'What super hero team is Captain America apart of?',
     answers: ['The Avengers', 'The Justice League', 'The Power Puff Girls']
@@ -29,3 +33,38 @@ var score = 0;
 var questNum = 0;
 var scoreKeep = 'Score '+score+' out of 10 possible';
 var questKeep = 'Question '+questNum+' out of 5';
+
+/*= End of GLOBAL VARIABLES =*/
+/*=============================================<<<<<*/
+
+
+/*=============================================>>>>>
+= Handling scores =
+===============================================>>>>>*/
+
+function isAnswerRight(questNum, ans) {
+  if(ans === qAndA[questNum].correctanswer){
+    score++;
+  }
+}
+
+/*= End of Handling scores =*/
+/*=============================================<<<<<*/
+
+/*=============================================>>>>>
+= Rendering Output =
+===============================================>>>>>*/
+
+
+
+/*= End of Rendering Output =*/
+/*=============================================<<<<<*/
+
+/*=============================================>>>>>
+= EVENT LISTENERS =
+===============================================>>>>>*/
+
+
+
+/*= End of EVENT LISTENERS =*/
+/*=============================================<<<<<*/
