@@ -1,0 +1,22 @@
+header{
+  text-align: center;
+}
+.start{
+ /*
+ * Used to center button and make bigger
+ */
+ text-align: center;
+}
+ul{
+  /*
+  * Take out list styles
+  */
+}
+
+.hidden{
+  /*
+  * Hides out put
+  * This will be based on what question and toggled with JS
+  */
+
+}
