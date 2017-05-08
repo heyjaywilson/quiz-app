@@ -9,12 +9,17 @@ header{
  * Used to center button and make bigger
  */
  text-align: center;
+ margin-top: 50px;
+ margin-bottom: 50px;
 }
 ul{
   /*
   * Take out list styles
   */
   list-style: none;
+  margin: auto;
+  width: 80%;
+  border: 2px black solid;
 }
 
 .hidden{
@@ -22,6 +27,7 @@ ul{
   * Hides out put
   * This will be based on what question and toggled with JS
   */
+  display: none;
 
 }
 .question{

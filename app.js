@@ -25,3 +25,7 @@ var qAnda = [
     correctanswer: 1
   }
 ];
+var score = 0;
+var questNum = 0;
+var scoreKeep = 'Score '+score+' out of 10 possible';
+var questKeep = 'Question '+questNum+' out of 5';
