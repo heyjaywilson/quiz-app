@@ -19,12 +19,12 @@ var qAndA = [
     correctanswer: 2
   },
   {
-    question: 'Who powers Iron Man\'s suit?',
+    question: 'Who powers Ironman\'s suit?',
     answers: ['Jarvis', 'Skynet', 'Siri'],
     correctanswer: 0
   },
   {
-    question: 'What is Super Man\'s greatest weakness?',
+    question: 'What is Superman\'s greatest weakness?',
     answers: ['Love','Kryptonite','Louis Lane']
     correctanswer: 1
   }
@@ -46,6 +46,10 @@ function isAnswerRight(questNum, ans) {
   if(ans === qAndA[questNum].correctanswer){
     score++;
   }
+}
+
+function resetScore(){
+  score = 0;
 }
 
 /*= End of Handling scores =*/
