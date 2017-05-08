@@ -1,3 +1,6 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
 header{
   text-align: center;
 }
@@ -11,6 +14,7 @@ ul{
   /*
   * Take out list styles
   */
+  list-style: none;
 }
 
 .hidden{
@@ -19,4 +23,7 @@ ul{
   * This will be based on what question and toggled with JS
   */
 
+}
+.question{
+  text-align: center;
 }
