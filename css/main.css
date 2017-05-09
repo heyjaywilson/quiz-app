@@ -19,7 +19,13 @@ ul{
   list-style: none;
   margin: auto;
   width: 80%;
+  background-color: rgba(158, 158, 158, 1);
   border: 2px black solid;
+  border-radius: 10px;
+  height: 600px;
+  list-style: none;
+  margin: auto;
+  width: 80%;
 }
 
 .hidden{

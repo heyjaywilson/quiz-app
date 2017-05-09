@@ -5,7 +5,7 @@
 var qAndA = [
   {
     question: 'What super hero team is Captain America apart of?',
-    answers: ['The Avengers', 'The Justice League', 'The Power Puff Girls']
+    answers: ['The Avengers', 'The Justice League', 'The Power Puff Girls'],
     correctanswer: 0
   },
   {
@@ -25,20 +25,17 @@ var qAndA = [
   },
   {
     question: 'What is Superman\'s greatest weakness?',
-    answers: ['Love','Kryptonite','Louis Lane']
+    answers: ['Love','Kryptonite','Louis Lane'],
     correctanswer: 1
   }
 ];
 var score = 0;
-var questNum = 0;
 var scoreKeep = 'Score '+score+' out of 10 possible';
 var questKeep = 'Question '+questNum+' out of 5';
 var restart = false;
 
 /*= End of GLOBAL VARIABLES =*/
 /*=============================================<<<<<*/
-
-
 
 /*=============================================>>>>>
 = Handling scores =
@@ -56,21 +53,30 @@ function resetScore(){
 
 /*= End of Handling scores =*/
 /*=============================================<<<<<*/
+/*=============================================>>>>>
+= CHANGING DISPLAY =
+===============================================>>>>>*/
+
+function hideStart(){
+  $('.start').addClass('hidden');
+}
+
+function showStart(){
+  $('.start').removeClass('hidden');
+}
+
+function showQuestions(){
+  $('ul').removeClass('hidden');
+}
 
 /*=============================================>>>>>
 = Rendering Output =
 ===============================================>>>>>*/
-
-
-
-/*= End of Rendering Output =*/
-/*=============================================<<<<<*/
-
 /*=============================================>>>>>
 = EVENT LISTENERS =
 ===============================================>>>>>*/
 
-
-
-/*= End of EVENT LISTENERS =*/
-/*=============================================<<<<<*/
+$('.start').on('click', function(event){
+  hideStart();
+  showQuestions();
+});
