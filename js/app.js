@@ -1,3 +1,7 @@
+/*=============================================>>>>>
+= VARIABLES IN USE =
+===============================================>>>>>*/
+
 const QANDA = [
 	{QUEST: 'What super hero team is Captain America apart of?',
 	 ANS: ['The Avengers', 'The Justice League', 'The Power Puff Girls'],
@@ -17,12 +21,28 @@ const QANDA = [
 ];
 var currentScore = 0;
 var userAnswer = 0;
+var questionNum = 0;
+
+/*= End of VARIABLES IN USE =*/
+/*=============================================<<<<<*/
+/*=============================================>>>>>
+= SHOW AND HIDE ELEMENTS =
+===============================================>>>>>*/
+
 function show(elm){
   elm.removeClass('hidden');
 }
 function hide(elm){
   elm.addClass('hidden');
 }
+
+/*= End of SHOW AND HIDE QUESTIONS =*/
+/*=============================================<<<<<*/
+
+/*=============================================>>>>>
+= HELPER FUNCTIONS =
+===============================================>>>>>*/
+
 function giveQuestion(qIndex){
 	return QANDA[qIndex].QUEST;
 }
@@ -44,6 +64,13 @@ function checkAns(input, cAns, elm){
 		elm.html('You got the question wrong. I\'m sorry.');
 	}
 }
+
+/*= End of HELPER FUNCTIONS =*/
+/*=============================================<<<<<*/
+/*=============================================>>>>>
+= RENDER =
+===============================================>>>>>*/
+
 function renderQuestion(index, elm){
 	elm.html(giveQuestion(index));
 }
@@ -67,10 +94,12 @@ function renderAll(index, elm){
   });
 }
 
-$('.start').on('click', function(event) {
+/*= End of RENDER =*/
+/*=============================================<<<<<*/
+
+$('.start').on('click', function() {
   event.preventDefault();
   hide($('.start'));
   show($('.js-box'));
-	var questionNum = 0;
   questionNum = renderAll(questionNum, $('.questions'));
 });
