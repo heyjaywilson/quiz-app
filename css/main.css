@@ -1,37 +1,55 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
-header{
+
+header {
   text-align: center;
 }
-.start{
- /*
+
+.start {
+  /*
  * Used to center button and make bigger
  */
- text-align: center;
- margin-top: 50px;
- margin-bottom: 50px;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .box {
-  background-color: rgba(158, 158, 158, 1);
-  border: 2px black solid;
-  border-radius: 10px;
   height: 600px;
   margin: auto;
   width: 80%;
 }
 
-.hidden{
+.hidden {
   /*
   * Hides out put
   * This will be based on what question and toggled with JS
   */
   display: none;
+}
 
+.questions, .score-and-progress {
+  position: relative;
+  width: 100%;
+  font-size: 1.5em;
 }
 .questions{
   text-align: center;
-  width: 100%;
-  font-size: 1.5em;
+}
+
+.score-and-progress {
+  display: flex;
+  justify-content: space-around;
+}
+form{
+  text-align: left;
+  width: 75%;
+  margin: 20px auto;
+}
+button{
+  background-color: rgba(235, 235, 235, 1);
+  border-radius: 5px;
+  margin-top: 20px;
 }
