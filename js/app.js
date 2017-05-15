@@ -120,7 +120,7 @@ function renderQuestion(index, elm) {
 function renderAnswers(index, elm) {
   var answer = '<form>';
   for (var i = 0; i < 3; i++) {
-    answer += '<input type ="radio" name="answer" value= "' + i + '">' + giveAnsChoice(index, i) + '</input><br>';
+    answer += '<input type ="radio" name="answer" value= "' + i + '">' + giveAnsChoice(index, i) + '<br>';
   }
   answer += '<div id="check"><button type="submit">Did I get the answer right?</button></form></div>';
   elm.append(answer);
