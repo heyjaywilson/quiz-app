@@ -12,18 +12,12 @@ header{
  margin-top: 50px;
  margin-bottom: 50px;
 }
-ul{
-  /*
-  * Take out list styles
-  */
-  list-style: none;
-  margin: auto;
-  width: 80%;
+
+.box {
   background-color: rgba(158, 158, 158, 1);
   border: 2px black solid;
   border-radius: 10px;
   height: 600px;
-  list-style: none;
   margin: auto;
   width: 80%;
 }
@@ -36,6 +30,8 @@ ul{
   display: none;
 
 }
-.question{
+.questions{
   text-align: center;
+  width: 100%;
+  font-size: 1.5em;
 }
