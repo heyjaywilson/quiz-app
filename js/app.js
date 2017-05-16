@@ -1,4 +1,4 @@
-/*=============================================>>>>>
+/* =============================================>>>>>
 = VARIABLES IN USE =
 ===============================================>>>>>*/
 
@@ -35,9 +35,13 @@ const QANDA = [
     CORRECTANS: 1
   }
 ];
-var currentScore = 0;
+var state = {
+  score: 0,
+  questionNum: 0
+}
+//var currentScore = 0;
 var userAnswer = 0;
-var questionNum = 0;
+//var questionNum = 0;
 
 /*= End of VARIABLES IN USE =*/
 /*=============================================<<<<<*/
@@ -58,10 +62,10 @@ function hide(elm) {
 = HELPER FUNCTIONS =
 ===============================================>>>>>*/
 
-function giveQuestion(qIndex) {
+function giveQuestion (qIndex) {
   return QANDA[qIndex].QUEST;
 }
-function giveAnsChoice(qIndex, aIndex) {
+function giveAnsChoice (qIndex, aIndex) {
   return QANDA[qIndex].ANS[aIndex];
 }
 function getCAns(qIndex) {
@@ -72,7 +76,7 @@ function scoreIncrease(cScore) {
 }
 function checkAns(input, cAns, elm) {
   if (input == cAns) {
-    currentScore = scoreIncrease(currentScore);
+    state.score = scoreIncrease(state.score);
     elm.html('You got the question correct and increased your score by 1!');
   } else {
     elm.html('You got the question wrong. I\'m sorry.');
@@ -80,9 +84,9 @@ function checkAns(input, cAns, elm) {
 }
 
 function resetGame(){
-	currentScore = 0;
+	state.score = 0;
 	userAnswer = 0;
-	questionNum = 0;
+	state.questionNum = 0;
 }
 function checkProgress(num){
 	if(num<4){
@@ -103,15 +107,15 @@ function nextQuestion(elm){
 	elm.append('<div class="js-next"><button class="next">Next question</button></div>');
 }
 function finalQuestion(elm){
-	output = '<p>Congrats on finishing the quiz. You\'re score is '+currentScore+' out of 5. If you\'d like to play again, click on the button below</p>';
+	output = '<p>Congrats on finishing the quiz. You\'re score is '+state.score+' out of 5. If you\'d like to play again, click on the button below</p>';
 	elm.html(output);
 	elm.append('<div id = "startover"><button class="startover">Restart</button></div>');
 }
 function renderScore() {
-  $('.score').html('Score: ' + currentScore + ' out of 5');
+  $('.score').html('Score: ' + state.score + ' out of 5');
 }
 function renderProgress() {
-  $('.progress').html('Question ' + (questionNum + 1) + ' out of 5');
+  $('.progress').html('Question ' + (state.questionNum + 1) + ' out of 5');
 }
 function renderQuestion(index, elm) {
 	////console.log(index);
@@ -147,18 +151,18 @@ $('.start').on('click', function() {
   event.preventDefault();
   hide($('.start'));
   show($('.box'));
-  questionNum = renderAll(questionNum, $('.questions'));
-	////console.log(questionNum);
+  state.questionNum = renderAll(state.questionNum, $('.questions'));
+	////console.log(state.questionNum);
 });
 $('.questions').on('click', '.next', function(){
 	event.preventDefault();
-	questionNum = renderAll(questionNum, $('.questions'));
-	////console.log(questionNum);
+	state.questionNum = renderAll(state.questionNum, $('.questions'));
+	////console.log(state.questionNum);
 });
 $('.questions').on('click', '.startover', function(){
 	event.preventDefault();
 	resetGame();
-	////console.log(questionNum);
-	questionNum = renderAll(questionNum, $('.questions'));
-	////console.log(questionNum);
+	////console.log(state.questionNum);
+	state.questionNum = renderAll(state.questionNum, $('.questions'));
+	////console.log(state.questionNum);
 });
